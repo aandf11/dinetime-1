@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 public class wait_List {
     private String resteraunt;
-    private List<Customer> wait;
-
+    private List<Customer> wait_queue;
+    
 }
