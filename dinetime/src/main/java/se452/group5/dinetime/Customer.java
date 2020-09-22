@@ -5,12 +5,9 @@ import lombok.Data;
 
 @Data
 public class Customer {
-
     private long id;
-
     private String name;
-    
     private String email;
+    private Date date_signed_up;
 
-    private Date datesignedup;
 }
