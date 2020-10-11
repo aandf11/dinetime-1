@@ -10,6 +10,12 @@ import org.springframework.boot.CommandLineRunner;
 @SpringBootApplication
 public class DinetimeApplication {
 
+
+	public static void main(String[] args) {
+		SpringApplication.run(DinetimeApplication.class, args);
+	}
+	
+
 	@Value( "${app.greeting}" )
     private String greeting;
   
@@ -23,13 +29,21 @@ public class DinetimeApplication {
 	} 
 	
 
-	public static void main(String[] args) {
-		SpringApplication.run(DinetimeApplication.class, args);
-	}
 	// @Bean
 	// public void samplerCustomersetterandgettertest(){
 	// 	Customer c = new Customer();
 	// 	c.setName("MARKY");
 		
 	// }
+
+	@Bean
+	public CommandLineRunner addCustomerAccount(CustomerAccountRepository repository){
+	  return (args) -> {
+		CustomerAccount newCustomerAccount = new CustomerAccount();
+		newCustomerAccount.setEmail("james@bond.uk");
+		newCustomerAccount.setName("James Bond");
+		repository.save(newCustomerAccount);
+	  };
+  
+	}
 }
