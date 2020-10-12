@@ -68,3 +68,10 @@ CREATE TABLE rate_info(
 	user_id VARCHAR(10),
 	ratingDate date
 );
+
+CREATE TABLE waitlist(
+	user_id VARCHAR(10),
+	table_id VARCHAR(10),
+	nm VARCHAR(50)
+
+);
