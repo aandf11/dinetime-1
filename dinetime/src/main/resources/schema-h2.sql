@@ -20,13 +20,13 @@ CREATE TABLE business_accounts(
 	email VARCHAR(50)
 );
 
-CREATE TABLE restaurants_location(
-    id int primary key auto_increment,
-	location_id VARCHAR(10),
-	business_nm VARCHAR(50),
-	address VARCHAR(50),
-	table_num int
-);
+-- CREATE TABLE restaurants_location(
+--     id int primary key auto_increment,
+-- 	location_id VARCHAR(10),
+-- 	business_nm VARCHAR(50),
+-- 	address VARCHAR(50),
+-- 	table_num int
+-- );
 
 
 CREATE TABLE table_availability(
@@ -38,12 +38,20 @@ CREATE TABLE table_availability(
     available_day DATE
 );
 
-CREATE TABLE restaurants_detail(
-	id int primary key auto_increment,
-	location_id VARCHAR(10),
-	restaurants_type VARCHAR(10),
-	average_rate int
-);
+-- CREATE TABLE restaurants_detail(
+-- 	id int primary key auto_increment,
+-- 	location_id VARCHAR(10),
+-- 	restaurants_type VARCHAR(10),
+-- 	average_rate int
+-- );
+
+-- CREATE TABLE restaurant(
+-- 	id int primary key auto_increment,
+-- 	location_id VARCHAR(10),
+-- 	restaurants_type VARCHAR(10),
+-- 	average_rate int
+-- );
+
 
 CREATE TABLE reservation_info(
 	reservation_id VARCHAR(10) primary key,

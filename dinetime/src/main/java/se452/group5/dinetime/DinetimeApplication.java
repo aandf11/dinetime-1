@@ -37,6 +37,26 @@ public class DinetimeApplication {
 	// }
 
 	@Bean
+	public CommandLineRunner addRestaurant(RestaurantRepository repository){
+	  return (args) -> {
+		Restaurant newRestaurant = new Restaurant();
+		newRestaurant.setLocation_id("25871");
+
+		RestaurantDetail newRestaurantDetail=new RestaurantDetail();
+		newRestaurantDetail.setBusiness_nm("PAPAS LITTLE BAKERY");
+		newRestaurantDetail.setRestaurants_type("BAKERY");
+		newRestaurant.setRestaurantDetail(newRestaurantDetail);
+
+		RestaurantLocation newRestaurantLocation =new RestaurantLocation();
+		newRestaurantLocation.setAddress("153 Main St. Chicago, IL");
+		newRestaurantLocation.setTableNum(4);
+		newRestaurant.setRestaurantLocation(newRestaurantLocation);;
+
+		repository.save(newRestaurant);
+	  };
+	}
+
+	@Bean
 	public CommandLineRunner addCustomerAccount(CustomerAccountRepository repository){
 	  return (args) -> {
 		CustomerAccount newCustomerAccount = new CustomerAccount();
@@ -44,6 +64,8 @@ public class DinetimeApplication {
 		newCustomerAccount.setName("James Bond");
 		repository.save(newCustomerAccount);
 	  };
-  
 	}
+
+
+	
 }
