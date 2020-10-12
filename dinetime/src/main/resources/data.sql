@@ -41,3 +41,6 @@ INSERT INTO rate_info(rate_id, user_id,location_id,ratingDate)VALUES
 	('R001','01321','23494', '2020-01-02'),
 	('R002','02433','87155', '2020-02-05');
 
+INSERT INTO waitlist(user_id, table_id,nm)VALUES
+ 	('23494', '01321', 'KATE PARKER'),
+ 	('87155', '02433', 'MARIA TALLEY');
