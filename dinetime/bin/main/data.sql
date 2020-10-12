@@ -1,7 +1,7 @@
 
 INSERT INTO customer_accounts(user_id, nm, email) VALUES
     ('23494', 'KATE PARKER', 'KPARKER501@GMAIL.COM'),
-    ('87155', 'MARIA TALLEY', 'MARIA_TALLEY@YAHOO.COM');
+	('87155', 'MARIA TALLEY', 'MARIA_TALLEY@YAHOO.COM');
 
 
 INSERT INTO business_accounts(user_id, business_nm, email) VALUES
@@ -40,7 +40,7 @@ INSERT INTO reservation_info(reservation_id, location_id, user_id, table_id,rese
 INSERT INTO rate_info(rate_id, user_id,location_id,ratingDate)VALUES
 	('R001','01321','23494', '2020-01-02'),
 	('R002','02433','87155', '2020-02-05');
-
+    
 INSERT INTO waitlist(user_id, table_id,nm)VALUES
 	('23494', '01321', 'KATE PARKER'),
 	('87155', '02433', 'MARIA TALLEY');
