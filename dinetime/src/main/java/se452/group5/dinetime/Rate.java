@@ -1,8 +1,6 @@
 package se452.group5.dinetime;
 
 
-import java.sql.Date;
-
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -13,31 +11,33 @@ import javax.persistence.JoinColumn;
 
 import javax.persistence.ManyToOne;
 
+import javax.persistence.OneToOne;
+
 import lombok.Data;
 
 
 @Data
 @Entity
-public class TableAvailability {
+public class Rate {
     
     @Id
     @GeneratedValue
     private long id;
 
-    private String table_id;
-
-
     @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-    @JoinColumn(name = "Restaurant", nullable = false)
-    private Restaurant restaurant;
+    @JoinColumn(name = "CustomerAccount", nullable = false)
+    private CustomerAccount customerAccount;
 
-    // private String location_id;
+  
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "rate_detail")
+    private RateDetail rateDetail;
 
-    private boolean available;
 
-    private int seats;
+    private String restaurant_name;
+    
 
-    private String time;
 
-    private Date date;
+
+    
 }

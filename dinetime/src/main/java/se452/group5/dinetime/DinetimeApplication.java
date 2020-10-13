@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.sql.Date;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -35,14 +35,6 @@ public class DinetimeApplication {
 	} 
 	
 
-	// @Bean
-	// public void samplerCustomersetterandgettertest(){
-	// 	Customer c = new Customer();
-	// 	c.setName("MARKY");
-		
-	// }
-
-
 
 	Restaurant newRestaurant;
 
@@ -51,6 +43,7 @@ public class DinetimeApplication {
 	  return (args) -> {
 		newRestaurant = new Restaurant();
 		newRestaurant.setLocation_id("25871");
+		
 
 		RestaurantDetail newRestaurantDetail=new RestaurantDetail();
 		newRestaurantDetail.setBusiness_nm("PAPAS LITTLE BAKERY");
@@ -81,15 +74,39 @@ public class DinetimeApplication {
 
 
 
+	CustomerAccount newCustomerAccount;
 	@Bean
 	public CommandLineRunner addCustomerAccount(CustomerAccountRepository repository){
 	  return (args) -> {
-		CustomerAccount newCustomerAccount = new CustomerAccount();
+		//test add customer
+		newCustomerAccount = new CustomerAccount();
 		newCustomerAccount.setEmail("james@bond.uk");
 		newCustomerAccount.setName("James Bond");
+		newCustomerAccount.setUserId("12356");
+
+		//use customer to add new rate
+		Rate newRate =new Rate();
+		newRate.setCustomerAccount(newCustomerAccount);
+		newCustomerAccount.getRateList().add(newRate);
+		newRate.setRestaurant_name("PAPAS LITTLE BAKERY");
+		RateDetail rateDetail= new RateDetail();
+		rateDetail.setRate(newRate);
+		rateDetail.setRate_stars(4);
+		
+
+		newRate.setRateDetail(rateDetail);
 		repository.save(newCustomerAccount);
+		
 	  };
 	}
+
+	
+	
+
+
+
+
+
 
 
 

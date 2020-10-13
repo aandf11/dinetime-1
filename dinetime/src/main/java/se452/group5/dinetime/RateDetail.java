@@ -1,8 +1,10 @@
 package se452.group5.dinetime;
 
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -13,21 +15,17 @@ import lombok.Data;
 
 @Data
 @Entity
-public class RestaurantDetail {
+public class RateDetail {
 
     @Id
     @GeneratedValue
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL,mappedBy = "restaurantDetail")
-    private Restaurant restaurant;
+    private int rate_stars;
+
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "rateDetail")
+    private Rate rate;
+
+
     
-
-    private String business_nm;
-
-    private String restaurants_type;
-
-    private int average_rate;
-
-
 }
