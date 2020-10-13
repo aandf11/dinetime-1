@@ -95,6 +95,20 @@ public class DinetimeApplication {
 		
 
 		newRate.setRateDetail(rateDetail);
+
+		
+		Reservation newReservation =new Reservation();
+		newReservation.setTable_id("95631");
+		newReservation.setTime("13:00");
+		DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
+		java.sql.Date sqlDate = new java.sql.Date(df.parse("02-05-2020").getTime());
+		newReservation.setReservation_id("002");
+		newReservation.setLocation_id("02433");
+		newReservation.setDate(sqlDate);
+		newCustomerAccount.getReservationList().add(newReservation);
+		newReservation.setUser_id(newCustomerAccount);
+		// newReservation.setUser_id(newCustomerAccount.getId());
+
 		repository.save(newCustomerAccount);
 		
 	  };

@@ -25,7 +25,7 @@ public class Rate {
     private long id;
 
     @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-    @JoinColumn(name = "CustomerAccount", nullable = false)
+    @JoinColumn(name = "CustomerAccount")
     private CustomerAccount customerAccount;
 
   

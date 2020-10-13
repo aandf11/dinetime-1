@@ -31,8 +31,9 @@ public class CustomerAccount {
     @Id
 	@GeneratedValue
 	private long id;
-    
-    @Column(name = "user_id")
+	
+	
+	@Column(name = "user_id")
 	private String userId;
 
 	@Column(name = "nm")
@@ -47,7 +48,8 @@ public class CustomerAccount {
 	private List<Rate> rateList=new ArrayList<>();
 
 
-
-
-    
+	@OneToMany(cascade=CascadeType.PERSIST,fetch=FetchType.LAZY, mappedBy = "user_id")
+	@ToString.Exclude
+	private List<Reservation> reservationList=new ArrayList<>();
+	
 }
