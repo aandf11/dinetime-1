@@ -46,6 +46,14 @@ public class RestaurantLocation {
 
     private int tableNum;
 
+    // @OneToMany
+    // @JoinTable
+    // (
+    //     name=
+    // )
+
+   
+
     
     
 }

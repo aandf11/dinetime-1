@@ -29,14 +29,14 @@ CREATE TABLE business_accounts(
 -- );
 
 
-CREATE TABLE table_availability(
-	table_id VARCHAR(10) primary key,
-	location_id VARCHAR(10),
-	available BOOL,
-	seats int,
-	available_time varchar(10),
-    available_day DATE
-);
+-- CREATE TABLE table_availability(
+-- 	table_id VARCHAR(10) primary key,
+-- 	location_id VARCHAR(10),
+-- 	available BOOL,
+-- 	seats int,
+-- 	available_time varchar(10),
+--     available_day DATE
+-- );
 
 -- CREATE TABLE restaurants_detail(
 -- 	id int primary key auto_increment,

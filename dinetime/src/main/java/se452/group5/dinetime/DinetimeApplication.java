@@ -4,6 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 
@@ -36,10 +42,14 @@ public class DinetimeApplication {
 		
 	// }
 
+
+
+	Restaurant newRestaurant;
+
 	@Bean
 	public CommandLineRunner addRestaurant(RestaurantRepository repository){
 	  return (args) -> {
-		Restaurant newRestaurant = new Restaurant();
+		newRestaurant = new Restaurant();
 		newRestaurant.setLocation_id("25871");
 
 		RestaurantDetail newRestaurantDetail=new RestaurantDetail();
@@ -50,11 +60,26 @@ public class DinetimeApplication {
 		RestaurantLocation newRestaurantLocation =new RestaurantLocation();
 		newRestaurantLocation.setAddress("153 Main St. Chicago, IL");
 		newRestaurantLocation.setTableNum(4);
-		newRestaurant.setRestaurantLocation(newRestaurantLocation);;
+		newRestaurant.setRestaurantLocation(newRestaurantLocation);
 
+
+		TableAvailability newTable=new TableAvailability();
+		newTable.setRestaurant(newRestaurant);
+		newTable.setTable_id("02433");
+		newTable.setSeats(4);
+		newTable.setAvailable(true);
+		newTable.setTime("13:00");
+
+		DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
+		java.sql.Date sqlDate = new java.sql.Date(df.parse("02-04-2020").getTime());
+		newTable.setDate(sqlDate);
+	
+		newRestaurant.getTableList().add(newTable);
 		repository.save(newRestaurant);
 	  };
 	}
+
+
 
 	@Bean
 	public CommandLineRunner addCustomerAccount(CustomerAccountRepository repository){
@@ -65,6 +90,7 @@ public class DinetimeApplication {
 		repository.save(newCustomerAccount);
 	  };
 	}
+
 
 
 	
