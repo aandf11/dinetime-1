@@ -7,15 +7,18 @@ import org.springframework.context.annotation.Bean;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
+
+
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 
+
+
 @SpringBootApplication
 public class DinetimeApplication {
-
+	@Value( "${spring.profiles.active}" )
+    private String env;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DinetimeApplication.class, args);
@@ -30,7 +33,8 @@ public class DinetimeApplication {
       return (args) -> {
         System.out.println("begin encoded");
         System.out.println(greeting);
-              System.out.println("end encoded");
+		System.out.println("end encoded");
+		System.out.println(env);
       };
 	} 
 	

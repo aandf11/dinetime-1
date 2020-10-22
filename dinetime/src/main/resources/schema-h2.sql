@@ -77,9 +77,9 @@ CREATE TABLE reservation(
 
 
 
-CREATE TABLE waitlist(
-	user_id VARCHAR(10),
-	table_id VARCHAR(10),
-	nm VARCHAR(50)
+-- CREATE TABLE waitlist(
+-- 	user_id VARCHAR(10),
+-- 	table_id VARCHAR(10),
+-- 	nm VARCHAR(50)
 
-);
+-- );
