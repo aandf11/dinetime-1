@@ -3,7 +3,7 @@ package se452.group5.dinetime;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.context.annotation.ComponentScan;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,8 +13,10 @@ import java.text.SimpleDateFormat;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 
+import se452.group5.dinetime.model.*;
 
-
+import se452.group5.dinetime.controller.*;
+// @ComponentScan(basePackages = {"se452.group5.dinetime"})
 @SpringBootApplication
 public class DinetimeApplication {
 	@Value( "${spring.profiles.active}" )
@@ -40,83 +42,83 @@ public class DinetimeApplication {
 	
 
 
-	Restaurant newRestaurant;
+	// Restaurant newRestaurant;
 
-	@Bean
-	public CommandLineRunner addRestaurant(RestaurantRepository repository){
-	  return (args) -> {
-		newRestaurant = new Restaurant();
-		newRestaurant.setLocation_id("25871");
+	// @Bean
+	// public CommandLineRunner addRestaurant(RestaurantRepository repository){
+	//   return (args) -> {
+	// 	newRestaurant = new Restaurant();
+	// 	newRestaurant.setLocation_id("25871");
 		
 
-		RestaurantDetail newRestaurantDetail=new RestaurantDetail();
-		newRestaurantDetail.setBusiness_nm("PAPAS LITTLE BAKERY");
-		newRestaurantDetail.setRestaurants_type("BAKERY");
-		newRestaurant.setRestaurantDetail(newRestaurantDetail);
+	// 	RestaurantDetail newRestaurantDetail=new RestaurantDetail();
+	// 	newRestaurantDetail.setBusiness_nm("PAPAS LITTLE BAKERY");
+	// 	newRestaurantDetail.setRestaurants_type("BAKERY");
+	// 	newRestaurant.setRestaurantDetail(newRestaurantDetail);
 
-		RestaurantLocation newRestaurantLocation =new RestaurantLocation();
-		newRestaurantLocation.setAddress("153 Main St. Chicago, IL");
-		newRestaurantLocation.setTableNum(4);
-		newRestaurant.setRestaurantLocation(newRestaurantLocation);
+	// 	RestaurantLocation newRestaurantLocation =new RestaurantLocation();
+	// 	newRestaurantLocation.setAddress("153 Main St. Chicago, IL");
+	// 	newRestaurantLocation.setTableNum(4);
+	// 	newRestaurant.setRestaurantLocation(newRestaurantLocation);
 
 
-		TableAvailability newTable=new TableAvailability();
-		newTable.setRestaurant(newRestaurant);
-		newTable.setTable_id("02433");
-		newTable.setSeats(4);
-		newTable.setAvailable(true);
-		newTable.setTime("13:00");
+	// 	TableAvailability newTable=new TableAvailability();
+	// 	newTable.setRestaurant(newRestaurant);
+	// 	newTable.setTable_id("02433");
+	// 	newTable.setSeats(4);
+	// 	newTable.setAvailable(true);
+	// 	newTable.setTime("13:00");
 
-		DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
-		java.sql.Date sqlDate = new java.sql.Date(df.parse("02-04-2020").getTime());
-		newTable.setDate(sqlDate);
+	// 	DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
+	// 	java.sql.Date sqlDate = new java.sql.Date(df.parse("02-04-2020").getTime());
+	// 	newTable.setDate(sqlDate);
 	
-		newRestaurant.getTableList().add(newTable);
-		repository.save(newRestaurant);
-	  };
-	}
+	// 	newRestaurant.getTableList().add(newTable);
+	// 	repository.save(newRestaurant);
+	//   };
+	// }
 
 
 
-	CustomerAccount newCustomerAccount;
-	@Bean
-	public CommandLineRunner addCustomerAccount(CustomerAccountRepository repository){
-	  return (args) -> {
-		//test add customer
-		newCustomerAccount = new CustomerAccount();
-		newCustomerAccount.setEmail("james@bond.uk");
-		newCustomerAccount.setName("James Bond");
-		newCustomerAccount.setUserId("12356");
+	// CustomerAccount newCustomerAccount;
+	// @Bean
+	// public CommandLineRunner addCustomerAccount(CustomerAccountRepository repository){
+	//   return (args) -> {
+	// 	//test add customer
+	// 	// newCustomerAccount = new CustomerAccount();
+	// 	// newCustomerAccount.setEmail("james@bond.uk");
+	// 	// newCustomerAccount.setName("James Bond");
+	// 	// newCustomerAccount.setUserId("12356");
 
-		//use customer to add new rate
-		Rate newRate =new Rate();
-		newRate.setCustomerAccount(newCustomerAccount);
-		newCustomerAccount.getRateList().add(newRate);
-		newRate.setRestaurant_name("PAPAS LITTLE BAKERY");
-		RateDetail rateDetail= new RateDetail();
-		rateDetail.setRate(newRate);
-		rateDetail.setRate_stars(4);
+	// 	// //use customer to add new rate
+	// 	// Rate newRate =new Rate();
+	// 	// newRate.setCustomerAccount(newCustomerAccount);
+	// 	// newCustomerAccount.getRateList().add(newRate);
+	// 	// newRate.setRestaurant_name("PAPAS LITTLE BAKERY");
+	// 	// RateDetail rateDetail= new RateDetail();
+	// 	// rateDetail.setRate(newRate);
+	// 	// rateDetail.setRate_stars(4);
 		
 
-		newRate.setRateDetail(rateDetail);
+	// 	// newRate.setRateDetail(rateDetail);
 
 		
-		Reservation newReservation =new Reservation();
-		newReservation.setTable_id("95631");
-		newReservation.setTime("13:00");
-		DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
-		java.sql.Date sqlDate = new java.sql.Date(df.parse("02-05-2020").getTime());
-		newReservation.setReservation_id("002");
-		newReservation.setLocation_id("02433");
-		newReservation.setDate(sqlDate);
-		newCustomerAccount.getReservationList().add(newReservation);
-		newReservation.setUser_id(newCustomerAccount);
-		// newReservation.setUser_id(newCustomerAccount.getId());
+	// 	// Reservation newReservation =new Reservation();
+	// 	// newReservation.setTable_id("95631");
+	// 	// newReservation.setTime("13:00");
+	// 	// DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
+	// 	// java.sql.Date sqlDate = new java.sql.Date(df.parse("02-05-2020").getTime());
+	// 	// newReservation.setReservation_id("002");
+	// 	// newReservation.setLocation_id("02433");
+	// 	// newReservation.setDate(sqlDate);
+	// 	// newCustomerAccount.getReservationList().add(newReservation);
+	// 	// newReservation.setUser_id(newCustomerAccount);
+	// 	// // newReservation.setUser_id(newCustomerAccount.getId());
 
-		repository.save(newCustomerAccount);
+	// 	// repository.save(newCustomerAccount);
 		
-	  };
-	}
+	//   };
+	// }
 
 	
 	

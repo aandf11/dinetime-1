@@ -40,8 +40,8 @@ INSERT INTO restaurant_detail( business_nm, restaurants_type, average_rate) VALU
 -- 	('002', '95631', '87155','02433', '13:00', '2020-02-05');
 
 
-INSERT INTO reservation(reservation_id, location_id , table_id,time,date) VALUES
-	('001', '25870','01321', '12:00', '2020-01-02');
+-- INSERT INTO reservation(reservation_id, location_id , table_id,time,date) VALUES
+-- 	('001', '25870','01321', '12:00', '2020-01-02');
 
 
 -- INSERT INTO waitlist(user_id, table_id,nm)VALUES

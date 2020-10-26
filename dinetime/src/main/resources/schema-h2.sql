@@ -12,11 +12,19 @@ DROP TABLE IF EXISTS waitlist;
 
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
 
+-- CREATE TABLE customer_accounts(
+--     id int primary key auto_increment,
+-- 	user_id VARCHAR(10),
+-- 	nm VARCHAR(50),
+-- 	email VARCHAR(50)
+-- );
+
 CREATE TABLE customer_accounts(
-    id int primary key auto_increment,
+    id INT AUTO_INCREMENT  PRIMARY KEY,   
 	user_id VARCHAR(10),
 	nm VARCHAR(50),
-	email VARCHAR(50)
+	email VARCHAR(50),
+	PRIMARY KEY (ID)  
 );
 
 CREATE TABLE business_accounts(
@@ -65,15 +73,15 @@ CREATE TABLE restaurant(
 -- );
 
 
-CREATE TABLE reservation(
-	id int primary key auto_increment,
-	reservation_id VARCHAR(10),
-	location_id VARCHAR(10),
-	user_id VARCHAR(10),
-	table_id VARCHAR(10),
-	time VARCHAR(10),
-    date DATE
-);
+-- CREATE TABLE reservation(
+-- 	id int primary key auto_increment,
+-- 	reservation_id VARCHAR(10),
+-- 	location_id VARCHAR(10),
+-- 	user_id VARCHAR(10),
+-- 	table_id VARCHAR(10),
+-- 	time VARCHAR(10),
+--     date DATE
+-- );
 
 
 

@@ -14,7 +14,7 @@ public class GreetingController {
     @GetMapping("/aa")
     public ModelAndView showGreeting() {
         ModelAndView mv = new ModelAndView("greeting");
-        mv.addObject("name", "Hello SE352/452 from " + greeting);
+        mv.addObject("name", "Hello Dintime Test Page " + greeting);
         return mv;
     }
 
