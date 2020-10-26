@@ -12,12 +12,6 @@ DROP TABLE IF EXISTS waitlist;
 
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
 
--- CREATE TABLE customer_accounts(
---     id int primary key auto_increment,
--- 	user_id VARCHAR(10),
--- 	nm VARCHAR(50),
--- 	email VARCHAR(50)
--- );
 
 CREATE TABLE customer_accounts(
     id INT AUTO_INCREMENT  PRIMARY KEY,   

@@ -14,16 +14,16 @@
         <div th:switch="${accounts}" class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2 th:case="null">No Customer yet!</h2>
+                    <h2 th:case="null">No Customer account yet!</h2>
                     <div th:case="*">
-                        <h2 class="my-5">Students</h2>
+                        <h2 class="my-5">Customer accounts</h2>
                         <table class="table table-striped table-responsive-md">
                             <thead>
                                 <tr>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <!-- <th>Edit</th>
-                                    <th>Delete</th> -->
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,8 +40,8 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <!-- <div class="container">
             <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        </div>
+        </div> -->
     </body>
 </html>
