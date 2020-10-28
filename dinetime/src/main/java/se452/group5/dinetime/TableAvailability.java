@@ -31,7 +31,7 @@ public class TableAvailability {
     @JoinColumn(name = "Restaurant", nullable = false)
     private Restaurant restaurant;
 
-    // private String location_id;
+    private String location_id;
 
     private boolean available;
 

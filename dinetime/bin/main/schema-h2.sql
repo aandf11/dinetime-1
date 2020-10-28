@@ -41,14 +41,14 @@ CREATE TABLE restaurant_location(
 );
 
 
-CREATE TABLE table_availability(
-	id int primary key auto_increment,
-	table_id VARCHAR(10),
-	available BOOL,
-	seats int,
-	time varchar(10),
-    date DATE
-);
+-- CREATE TABLE table_availability(
+-- 	id int primary key auto_increment,
+-- 	table_id VARCHAR(10),
+-- 	available BOOL,
+-- 	seats int,
+-- 	time varchar(10),
+--     date DATE
+-- );
 
 CREATE TABLE restaurant_detail(
 	id int primary key auto_increment,
@@ -63,31 +63,31 @@ CREATE TABLE restaurant(
 );
 
 
--- CREATE TABLE reservation_info(
--- 	reservation_id VARCHAR(10) primary key,
--- 	location_id VARCHAR(10),
--- 	user_id VARCHAR(10),
--- 	table_id VARCHAR(10),
--- 	reservation_time VARCHAR(10),
---     reservation_date DATE
--- );
+CREATE TABLE reservation_info(
+	reservation_id VARCHAR(10) primary key,
+	location_id VARCHAR(10),
+	user_id VARCHAR(10),
+	table_id VARCHAR(10),
+	reservation_time VARCHAR(10),
+    reservation_date DATE
+);
 
 
--- CREATE TABLE reservation(
--- 	id int primary key auto_increment,
--- 	reservation_id VARCHAR(10),
--- 	location_id VARCHAR(10),
--- 	user_id VARCHAR(10),
--- 	table_id VARCHAR(10),
--- 	time VARCHAR(10),
---     date DATE
--- );
+CREATE TABLE reservation(
+	id int primary key auto_increment,
+	reservation_id VARCHAR(10),
+	location_id VARCHAR(10),
+	user_id VARCHAR(10),
+	table_id VARCHAR(10),
+	time VARCHAR(10),
+    date DATE
+);
 
 
 
--- CREATE TABLE waitlist(
--- 	user_id VARCHAR(10),
--- 	table_id VARCHAR(10),
--- 	nm VARCHAR(50)
+CREATE TABLE waitlist(
+	user_id VARCHAR(10),
+	table_id VARCHAR(10),
+	nm VARCHAR(50)
 
--- );
+);
