@@ -53,13 +53,36 @@ public class CustomerAccount{
 	private String email;
 
 
+	private String password;
+
+
 	// @OneToMany(cascade=CascadeType.PERSIST,fetch=FetchType.LAZY, mappedBy = "customerAccount")
     // @ToString.Exclude
 	// private List<Rate> rateList=new ArrayList<>();
 
+//,orphanRemoval = true
 
-	// @OneToMany(cascade=CascadeType.PERSIST,fetch=FetchType.LAZY, mappedBy = "user_id")
-	// @ToString.Exclude
-	// private List<Reservation> reservationList=new ArrayList<>();
+@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY, mappedBy = "user_id",orphanRemoval = true)
+	@ToString.Exclude
+	private List<Rate> rateList=new ArrayList<>();
+
+
+
+	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY, mappedBy = "user_id",orphanRemoval = true)
+	@ToString.Exclude
+	private List<Reservation> reservationList=new ArrayList<>();
+
+	public void addReservation(Reservation reservation) {
+        reservationList.add(reservation);
+        reservation.setUser_id(this);
+	}
 	
+	public void removeReservation(Reservation reservation){
+		reservationList.remove(reservation);
+		// reservation.setUser_id(null);
+		
+	}
+	
+
+
 }

@@ -1,33 +1,33 @@
-package se452.group5.dinetime;
+// package se452.group5.dinetime;
 
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+// import javax.persistence.CascadeType;
+// import javax.persistence.Entity;
+// import javax.persistence.GeneratedValue;
+// import javax.persistence.Id;
 
-import javax.persistence.OneToOne;
+// import javax.persistence.OneToOne;
 
-import lombok.Data;
+// import lombok.Data;
 
 
-@Data
-@Entity
-public class RestaurantDetail {
+// @Data
+// @Entity
+// public class RestaurantDetail {
 
-    @Id
-    @GeneratedValue
-    private long id;
+//     @Id
+//     @GeneratedValue
+//     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL,mappedBy = "restaurantDetail")
-    private Restaurant restaurant;
+//     @OneToOne(cascade = CascadeType.ALL,mappedBy = "restaurantDetail")
+//     private Restaurant restaurant;
     
 
-    private String business_nm;
+//     private String business_nm;
 
-    private String restaurants_type;
+//     private String restaurants_type;
 
-    private int average_rate;
+//     private int average_rate;
 
 
-}
+// }

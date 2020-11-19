@@ -1,9 +1,9 @@
-package se452.group5.dinetime;
+// package se452.group5.dinetime;
 
-import java.util.UUID;
+// import java.util.UUID;
 
-import org.springframework.data.repository.CrudRepository;
+// import org.springframework.data.repository.CrudRepository;
 
-public interface RestaurantDetailRepository extends CrudRepository<RestaurantDetail, Long> {
+// public interface RestaurantDetailRepository extends CrudRepository<RestaurantDetail, Long> {
     
-}
+// }
