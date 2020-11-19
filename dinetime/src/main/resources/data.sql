@@ -47,19 +47,19 @@ INSERT INTO restaurants( restaurant_nm, restaurant_address) VALUES
 -- 	('PETES CAFE', 'CAFE', 4);
 
 
-INSERT INTO reservation_info(reservation_id, location_id, user_id, table_id,reservation_time,reservation_date) VALUES
-	('001', '25870', '23494','01321', '12:00', '2020-01-02'),
-	('002', '95631', '87155','02433', '13:00', '2020-02-05');
+-- INSERT INTO reservation_info(reservation_id, location_id, user_id, table_id,reservation_time,reservation_date) VALUES
+-- 	('001', '25870', '23494','01321', '12:00', '2020-01-02'),
+-- 	('002', '95631', '87155','02433', '13:00', '2020-02-05');
 
 
-INSERT INTO reservation(reservation_id, location_id , table_id,time,date) VALUES
-	('001', '25870','01321', '12:00', '2020-01-02');
+-- INSERT INTO reservation(reservation_id, location_id , table_id,time,date) VALUES
+-- 	('001', '25870','01321', '12:00', '2020-01-02');
 
 -- INSERT INTO reservations(table_id, customer_id , business_id) VALUES
 -- 	('t01', 'customer01','business01');
 
-INSERT INTO waitlist(user_id, table_id,nm)VALUES
- 	('23494', '01321', 'KATE PARKER'),
- 	('87155', '02433', 'MARIA TALLEY');
+-- INSERT INTO waitlist(user_id, table_id,nm)VALUES
+--  	('23494', '01321', 'KATE PARKER'),
+--  	('87155', '02433', 'MARIA TALLEY');
 
 
