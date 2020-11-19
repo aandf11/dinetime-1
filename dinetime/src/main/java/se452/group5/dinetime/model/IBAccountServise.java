@@ -9,4 +9,10 @@ public interface IBAccountServise {
     public BusinessAccount findById(Integer id);
 
     public void deleteById(Integer id);
+
+    public List<BusinessAccount> findByName(String name);
+
+    public List<BusinessAccount> findByPassword(String name);
+
+    public List<BusinessAccount> findByUserId(String userId);
 }

@@ -44,5 +44,15 @@ public class BusinessAccount {
 
 	@Email(message = "not valid email address format")
 	private String email;
+
+	private String password;
+
+
+	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY, mappedBy = "user_id",orphanRemoval = true)
+	@ToString.Exclude
+	private List<Restaurant> restaurantList=new ArrayList<>();
+
+
+
     
 }

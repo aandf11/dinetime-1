@@ -4,11 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-
-
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -39,7 +40,28 @@ public class DinetimeApplication {
 		System.out.println(env);
       };
 	} 
+
+	@Configuration
+    public class WebConfig implements WebMvcConfigurer {      
+        @Override
+        public void addResourceHandlers(ResourceHandlerRegistry registry) {
+            registry.addResourceHandler("/**")
+            .addResourceLocations("classpath:/static/","classpath:/images/")
+            .setCachePeriod(0);
+        }
+    }
 	
+// @Bean
+// 	public CommandLineRunner addRestaurant(UserRepository repository){
+// 	  return (args) -> {
+// 		  User u= new User();
+// 		  u.setUsername("amy");
+// 		  u.setPassword("password");
+
+		
+// 		repository.save(u);
+// 	  };
+// 	}
 
 
 	// Restaurant newRestaurant;

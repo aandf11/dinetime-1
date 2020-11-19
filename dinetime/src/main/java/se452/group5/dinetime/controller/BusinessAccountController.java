@@ -20,6 +20,8 @@ public class BusinessAccountController {
     @Autowired
     private IBAccountServise accountServise;
 
+    private BusinessAccount business ;
+
     @GetMapping
     public ModelAndView showAccounts() {
     ModelAndView mv = new ModelAndView("list-business");
@@ -39,8 +41,9 @@ public class BusinessAccountController {
       return "register-business";
     }
     accountServise.update(account);
+    String id=Integer.toString(account.getId());
     model.addAttribute("accounts", accountServise.findAll());
-    return "redirect:/businessAccount";
+    return "redirect:/restaurant/add/"+id;
   }
 
 
@@ -55,8 +58,10 @@ public class BusinessAccountController {
 
    @GetMapping("/edit/{id}")
   public String showEdit(@PathVariable("id") Integer id, Model model) {
-    BusinessAccount business = accountServise.findById(id);
+    business = accountServise.findById(id);
     System.out.println("Show edit:"+ business.getName());
+
+
 
     model.addAttribute("account", business);
     return "edit-business";  
@@ -67,13 +72,18 @@ public class BusinessAccountController {
   @PostMapping("/edit")
   public String update(@Valid BusinessAccount business, BindingResult result) {
     if (result.hasErrors()) {
+      
       return "edit-business";
+      
     }
+    business.setRestaurantList(this.business.getRestaurantList());
 
     System.out.println("after edit: "+ business.getId()+ "NAME: "+business.getName());
     accountServise.update(business);
     System.out.println("size: "+ accountServise.findAll().size());
-    return "redirect:/businessAccount";
+
+
+    return "redirect:/restaurant";
   }
 
 }

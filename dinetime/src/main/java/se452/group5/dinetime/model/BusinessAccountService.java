@@ -35,10 +35,6 @@ public class BusinessAccountService implements IBAccountServise {
     // return null;
   }
 
-  // public CustomerAccount findByUserId(String userId) {
-  //   return repository.findByUserId(userId).get(0);
-  //   // return null;
-  // }
 
   @Override
   public void deleteById(Integer id) {
@@ -46,4 +42,19 @@ public class BusinessAccountService implements IBAccountServise {
     repository.deleteById(id);
   }
     
+  @Override
+  public List<BusinessAccount> findByName(String name){
+    return repository.findByName(name);
+  }
+
+  @Override
+  public List<BusinessAccount> findByPassword(String password){
+    return repository.findByPassword(password);
+  }
+
+  @Override
+
+  public List<BusinessAccount> findByUserId(String userId){
+    return repository.findByUserId(userId);
+  }
 }

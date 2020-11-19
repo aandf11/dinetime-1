@@ -12,5 +12,11 @@ public interface IAccountServise {
     public CustomerAccount findById(Integer id);
 
     public void deleteById(Integer id);
+
+    public List<CustomerAccount> findByName(String name);
+
+    public List<CustomerAccount> findByPassword(String name);
+
+    public List<CustomerAccount> findByUserId(String userId);
     
 }

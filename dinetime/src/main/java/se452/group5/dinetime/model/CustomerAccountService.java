@@ -23,8 +23,9 @@ public class CustomerAccountService implements IAccountServise{
 
   @Override
   public CustomerAccount update(CustomerAccount account) {
-    System.out.println("update");
+    System.out.println("update in servise " + account.getReservationList());
     repository.save(account);
+    
     return account;
   }
 
@@ -44,4 +45,24 @@ public class CustomerAccountService implements IAccountServise{
     System.out.println("Delete by id :"+ id);
     repository.deleteById(id);
   }
+
+  @Override
+  public List<CustomerAccount> findByName(String name){
+    return repository.findByName(name);
+  }
+
+  @Override
+  public List<CustomerAccount> findByPassword(String password){
+    return repository.findByPassword(password);
+  }
+
+  @Override
+
+  public List<CustomerAccount> findByUserId(String userId){
+    return repository.findByUserId(userId);
+  }
+
+
+
+
 }

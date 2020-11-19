@@ -13,5 +13,12 @@ public interface BusinessAccountRepository extends CrudRepository<BusinessAccoun
 
     @Override
     List<BusinessAccount> findAll();
+
+    List<BusinessAccount> findByName(String name);
+
+    List<BusinessAccount> findByPassword(String name);
+
+    List<BusinessAccount> findByUserId(String userId);
+
     
 }

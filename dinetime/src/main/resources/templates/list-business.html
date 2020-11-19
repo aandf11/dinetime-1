@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Students</title>
+        <title>Business</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -22,7 +24,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Edit</th>
+                                    <!-- <th>Edit</th> -->
                                     <th>Delete</th>
                                 </tr>
                             </thead>
@@ -30,18 +32,16 @@
                                 <tr th:each="account : ${accounts}">
                                     <td th:text="${account.name}"></td>
                                     <td th:text="${account.email}"></td>
-                                    <td><a th:href="@{/businessAccount/edit/{id}(id=${account.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                    <!-- <td><a th:href="@{/businessAccount/edit/{id}(id=${account.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td> -->
                                     <td><a th:href="@{/businessAccount/delete/{id}(id=${account.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>      
-                    <p class="my-5"><a href="/businessAccount/add" class="btn btn-primary"><i class="fas fa-user-plus ml-2"></i></a></p>
+                    <!-- <p class="my-5"><a href="/businessAccount/add" class="btn btn-primary"><i class="fas fa-user-plus ml-2"></i></a></p> -->
                 </div>
             </div>
         </div>
-        <!-- <div class="container">
-            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        </div> -->
+       
     </body>
-</html>
+</html> 
