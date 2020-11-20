@@ -32,7 +32,6 @@ public class LoginBusinessService implements ILoginBusinessService{
     @Override
     public LoginBusiness findById(Integer id) {
       return repository.findById(id).get();
-      // return null;
     }
   
     @Override

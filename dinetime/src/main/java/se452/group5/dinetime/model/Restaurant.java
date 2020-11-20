@@ -50,21 +50,13 @@ public class Restaurant {
     private BusinessAccount user_id;
 
 
-    //10/26 for test  
+  
     @Column(name = "restaurant_nm")
     private String name;
 
     @Column(name = "restaurant_address")
     private String address;
 
-    @Column(name = "restaurant_type")
-    private String type;
-   
-    //private long averageRate;
-    
-
-    // @Column
-    // private String location_id;
 
     @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY, mappedBy = "restaurant")
     @ToString.Exclude
@@ -74,15 +66,6 @@ public class Restaurant {
     @ToString.Exclude
     private List<Rate> rateList=new ArrayList<>();
 
-
-    // @OneToOne(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "restaurants_detail")
-    // private RestaurantDetail restaurantDetail;
-
-
-    // @OneToOne(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "restaurants_location")
-    // private RestaurantLocation restaurantLocation;
 
 
 

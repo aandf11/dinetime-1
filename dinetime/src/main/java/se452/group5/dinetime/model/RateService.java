@@ -40,10 +40,6 @@ public class RateService implements IRateService{
       repository.deleteAll();
     }
 
-    // @Override
-    // public List<Rate> findByRestaurant(String name){
-    //   System.out.println("find by name :"+ name);
-    //   return repository.findByRestaurant(name);
-    // }
+
     
 }

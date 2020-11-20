@@ -16,7 +16,7 @@ CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
 
 CREATE TABLE customer_accounts(
     id INT AUTO_INCREMENT  PRIMARY KEY,   
-	user_id VARCHAR(10),
+	user_id VARCHAR(20),
 	nm VARCHAR(50),
 	email VARCHAR(50),
 	password VARCHAR(20),
@@ -25,16 +25,13 @@ CREATE TABLE customer_accounts(
 
 CREATE TABLE business_accounts(
     id int primary key auto_increment,
-	user_id VARCHAR(10),
+	user_id VARCHAR(20),
 	business_nm VARCHAR(50),
-	email VARCHAR(50)
+	email VARCHAR(50),
+	password VARCHAR(20)
 );
 
 
-CREATE TABLE wait_List(
-    id int primary key auto_increment,
-	resteraunt VARCHAR(50)
-);
 
 CREATE TABLE table_availability(
 	id int primary key auto_increment,
@@ -46,45 +43,37 @@ CREATE TABLE table_availability(
 
 CREATE TABLE login_customer(
 	id int primary key auto_increment,
-	user_id VARCHAR(10),
-	password VARCHAR(10)
+	user_id VARCHAR(20),
+	password VARCHAR(20)
 );
 
 
 CREATE TABLE login_business(
 	id int primary key auto_increment,
-	user_id VARCHAR(10),
-	password VARCHAR(10)
+	user_id VARCHAR(20),
+	password VARCHAR(20)
 );
 
 
 
-
-
-CREATE TABLE restaurant_detail(
-	id int primary key auto_increment,
-	business_nm VARCHAR(50),
-	restaurants_type VARCHAR(10),
-	average_rate int
-);
-
+ 
 
 
 
 CREATE TABLE restaurants(
 	id int primary key auto_increment,
 	restaurant_nm VARCHAR(50),
-	restaurant_address VARCHAR(50)
+	restaurant_address VARCHAR(80)
 );
 
 
 
 CREATE TABLE reservations(
 	id int primary key auto_increment,
-	table_id VARCHAR(10),
-	customer_id VARCHAR(10),
-	restaurant VARCHAR(10),
-	time varchar(10),
+	table_id VARCHAR(20),
+	customer_id VARCHAR(20),
+	restaurant VARCHAR(50),
+	time varchar(20),
     date DATE,
 	seats int
 );
@@ -92,7 +81,7 @@ CREATE TABLE reservations(
 CREATE TABLE rates(
 	id int primary key auto_increment,
 	star VARCHAR(10),
-	restaurants VARCHAR(10)
+	restaurants VARCHAR(20)
 );
 
 

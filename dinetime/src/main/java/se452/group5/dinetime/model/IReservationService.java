@@ -10,7 +10,6 @@ public interface IReservationService {
 
     public void deleteById(Integer id);
 
-    // public List<TableAvailability> findBySeats(int seats);
     public List<Reservation> findByRestaurant(String name);
     
 }

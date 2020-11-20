@@ -37,14 +37,14 @@ public class LoginBusinessController {
       return "login-business";
   }
 
-  //need to add....
+ 
   @PostMapping
   public ModelAndView add(@Valid LoginBusiness account, BindingResult result, Model model) {
     if (result.hasErrors()) {
       ModelAndView mv = new ModelAndView("login-business");
       mv.addObject("accounts", accountServise.findAll());
       return mv;
-      // return "login-customer";
+      
     }
 
     List<BusinessAccount> login = businessAccountService.findByUserId(account.getUserId());
@@ -58,25 +58,23 @@ public class LoginBusinessController {
       String iPassword = account.getPassword();
       if(cPassword.equals(iPassword)){
         System.out.println("passward correct, login!!");
-        // return "redirect:/customerAccount/add";
+       
         ModelAndView mv1 = new ModelAndView("list-restaurants");
         
         List<Restaurant> r1 = user.getRestaurantList();
-        //add restaurant list
+      
         mv1.addObject("restaurants", r1);
         
-
-        // //add account
         mv1.addObject("account", user);
         System.out.println("account!!"+user.getId());
-        // System.out.println("account!!"+account.getId().getClass());
+       
         return mv1;
       }
     }
    
         //user id and password is incorrect return the same page
         System.out.println("passward incorrect, login!!");
-        // return "login-customer";
+   
         ModelAndView mv = new ModelAndView("login-business");
         mv.addObject("accounts", accountServise.findAll());
         

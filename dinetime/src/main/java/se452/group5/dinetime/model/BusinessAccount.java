@@ -21,9 +21,6 @@ import javax.persistence.FetchType;
 
 import javax.validation.constraints.Email;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.Transient;
-
 import lombok.NoArgsConstructor;
 
 @Data

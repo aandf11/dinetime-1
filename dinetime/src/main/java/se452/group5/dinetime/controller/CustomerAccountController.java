@@ -47,15 +47,6 @@ public class CustomerAccountController {
 
   @GetMapping("/show")
   public String show() {
-   
-  // loginUser= accountServise.findById(uid);
-  // ModelAndView mv = new ModelAndView("list-reservations");
-  // mv.addObject("account", loginUser);
-
-  // List<Reservation> r1 = loginUser.getReservationList();
-  // mv.addObject("reservations", r1);
-  // return mv;
-
   return "redirect:/reservation/show/"+uid;
 }
 
@@ -115,49 +106,14 @@ public class CustomerAccountController {
   }
 
 
-  
-  // @PostMapping("/edit")
-  // public String update(@Valid CustomerAccount customer, BindingResult result) {
-  //   if (result.hasErrors()) {
-  //     return "edit-customers";
-  //   }
 
-  //   System.out.println("after edit: "+ customer.getId()+ "NAME: "+customer.getName());
-  //   accountServise.update(customer);
-  //   System.out.println("size: "+ accountServise.findAll().size());
-
-  //   return "redirect:/customerAccount";
-  // }
 
   @PostMapping("/edit")
   public String update(@Valid CustomerAccount customer1, BindingResult result) {
     if (result.hasErrors()) {
-      // ModelAndView mv1 = new ModelAndView("edit-customers");
-      // mv1.addObject("account", customer);
-
-      // return mv1;
-    }
-
-    // customer.setReservationList(this.customer.getReservationList());
-    accountServise.update(customer1);
-    // System.out.println("size: "+ accountServise.findAll().size());
-
-    
-
   
-    // List<Reservation> r1 = customer1.getReservationList();
-    
-
-    // ModelAndView mv1 = new ModelAndView("list-reservations");
-    // //add reservation list
-    // mv1.addObject("reservations", r1);
-    // //add account
-    // mv1.addObject("account", customer1);
-
-    // mv1.addObject("user", customer1);
-
-    // return mv1;
-
+    }
+    accountServise.update(customer1);    
     return "redirect:/reservation/show/"+customer1.getId();
   }
 

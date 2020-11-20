@@ -43,7 +43,7 @@ public class RestaurantController {
     ModelAndView mv = new ModelAndView("list-restaurants");
     businessAccount = bAccountService.findById(uid);
     System.out.println("Show restaurant !!!"+uid);
-    // mv.addObject("restaurants", restaurantService.findAll());
+   
     mv.addObject("restaurants", businessAccount.getRestaurantList());
     mv.addObject("account", businessAccount);
     return mv;
@@ -79,8 +79,6 @@ public class RestaurantController {
     restaurantService.update(restaurant);
     bAccountService.update(businessAccount);
 
-    // System.out.println("In Rustaurant Add!: "+restaurant.getUser_id());
-    // System.out.println("In Rustaurant Add!:  "+ businessAccount.getRestaurantList());
 
     
     // get restaurantlist to show

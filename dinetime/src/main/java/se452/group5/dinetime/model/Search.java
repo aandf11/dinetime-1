@@ -46,7 +46,6 @@ import lombok.NoArgsConstructor;
 public class Search {
     private String seats;
     
-    // @DateTimeFormat(pattern = "dd/MM/yyyy h:mm a")
     private Date date;
     
 }

@@ -32,13 +32,10 @@ public class CustomerAccountService implements IAccountServise{
   @Override
   public CustomerAccount findById(Integer id) {
     return repository.findById(id).get();
-    // return null;
+  
   }
 
-  // public CustomerAccount findByUserId(String userId) {
-  //   return repository.findByUserId(userId).get(0);
-  //   // return null;
-  // }
+ 
 
   @Override
   public void deleteById(Integer id) {

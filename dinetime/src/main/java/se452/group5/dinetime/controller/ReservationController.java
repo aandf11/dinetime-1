@@ -14,12 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import se452.group5.dinetime.model.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import java.util.List;
+
 
 @Controller
 @RequestMapping("reservation")
@@ -54,12 +49,6 @@ public class ReservationController {
     
     return mv;
   }
-
-//   @GetMapping("/show/{id}")
-//   public String show(@PathVariable("id") Integer id, Model model) {
-  
-//   return "redirect:/reservation";
-// }
 
 
 
@@ -110,10 +99,6 @@ public class ReservationController {
       
       reservationService.deleteById(id);
 
-      
-
-      
-
 
 
       return "redirect:/reservation";
@@ -139,7 +124,6 @@ public class ReservationController {
   @GetMapping("/edit/{id}")
   public String showEdit(@PathVariable("id") Integer id, Model model) {
     Reservation reservation = reservationService.findById(id);
-    // System.out.println("Show edit:"+ reservation.getName());
     System.out.println("in edit Model"+ model);
     model.addAttribute("reservation", reservation);
     return "edit-reservation";  

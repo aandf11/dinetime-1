@@ -32,7 +32,7 @@
                                 <tr th:each="account : ${accounts}">
                                     <td th:text="${account.name}"></td>
                                     <td th:text="${account.email}"></td>
-                                    <!-- <td><a th:href="@{/businessAccount/edit/{id}(id=${account.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td> -->
+                                   
                                     <td><a th:href="@{/businessAccount/delete/{id}(id=${account.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
                                 </tr>
                             </tbody>

@@ -30,18 +30,7 @@ import javax.validation.constraints.Email;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.Transient;
-
-import lombok.NoArgsConstructor;
-
-
-
 import javax.persistence.OneToOne;
-
-import javax.persistence.OneToOne;
-import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @Entity
@@ -58,11 +47,6 @@ public class TableAvailability {
     @JoinColumn(name = "restaurants")
     private Restaurant restaurant;
     
-
-    // @OneToOne(cascade = CascadeType.ALL,mappedBy = "table")
-    // private Reservation reservation;
-
-
  
     @JsonIgnore
     @OneToOne(
@@ -74,9 +58,6 @@ public class TableAvailability {
     @ToString.Exclude
     private Reservation reservation;
 
-    // @OneToOne(cascade = CascadeType.ALL,mappedBy = "tableAvailability")
-    // private Reservation reservation;
-    
 
 
     private boolean available;
@@ -85,7 +66,5 @@ public class TableAvailability {
 
     private String time;
 
-   
-    // @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date date;
 }

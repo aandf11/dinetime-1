@@ -26,22 +26,6 @@ import javax.persistence.Column;
 
 import javax.persistence.FetchType;
 
-import javax.validation.constraints.Email;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.Transient;
-
-import lombok.NoArgsConstructor;
-
-
-
-import javax.persistence.OneToOne;
-
-import javax.persistence.OneToOne;
-import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @Entity
@@ -53,23 +37,14 @@ public class Rate {
     @GeneratedValue
     private long id;
 
-    // @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-    // @JoinColumn(name = "CustomerAccount")
-    // private CustomerAccount customerAccount;
 
     @ManyToOne(cascade=CascadeType.MERGE,fetch=FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private CustomerAccount user_id;
 
-  
-    // @OneToOne(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "rate_detail")
-    // private RateDetail rateDetail;
-
 
     private String star;
 
-    // private String restaurant;
 
     @ManyToOne(cascade=CascadeType.MERGE,fetch=FetchType.LAZY)
     @JoinColumn(name = "restaurants")

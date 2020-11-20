@@ -47,7 +47,7 @@ public class LoginCustomerController {
       ModelAndView mv = new ModelAndView("login-customer");
       mv.addObject("accounts", accountServise.findAll());
       return mv;
-      // return "login-customer";
+      
     }
 
     List<CustomerAccount> login = customerAccountServise.findByUserId(account.getUserId());
@@ -59,10 +59,10 @@ public class LoginCustomerController {
       String iPassword = account.getPassword();
       if(cPassword.equals(iPassword)){
         System.out.println("passward correct, login!!");
-        // return "redirect:/customerAccount/add";
+        
         ModelAndView mv1 = new ModelAndView("list-reservations");
         List<Reservation> r1 = user.getReservationList();
-        //add reservation list
+       
         mv1.addObject("reservations", r1);
         //add account
         mv1.addObject("account", account);
@@ -76,7 +76,7 @@ public class LoginCustomerController {
 
     //user id and password is incorrect return the same page
     System.out.println("passward incorrect, login!!");
-    // return "login-customer";
+   
     ModelAndView mv = new ModelAndView("login-customer");
     mv.addObject("accounts", accountServise.findAll());
     return mv;

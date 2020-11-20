@@ -33,11 +33,6 @@ import lombok.NoArgsConstructor;
 public class CustomerAccount{
 
 
-	// @Id
-	// @GeneratedValue(generator = "uuid")
-	// @GenericGenerator(name = "uuid", strategy = "uuid2")
-	// private UUID id;
-
 	@Column
     @Id
     @GeneratedValue
@@ -56,12 +51,6 @@ public class CustomerAccount{
 	private String password;
 
 
-	// @OneToMany(cascade=CascadeType.PERSIST,fetch=FetchType.LAZY, mappedBy = "customerAccount")
-    // @ToString.Exclude
-	// private List<Rate> rateList=new ArrayList<>();
-
-//,orphanRemoval = true
-
 @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY, mappedBy = "user_id",orphanRemoval = true)
 	@ToString.Exclude
 	private List<Rate> rateList=new ArrayList<>();
@@ -79,7 +68,7 @@ public class CustomerAccount{
 	
 	public void removeReservation(Reservation reservation){
 		reservationList.remove(reservation);
-		// reservation.setUser_id(null);
+
 		
 	}
 	

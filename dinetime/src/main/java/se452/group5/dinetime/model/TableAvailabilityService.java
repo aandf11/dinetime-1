@@ -40,10 +40,7 @@ public class TableAvailabilityService implements ITableService {
     repository.deleteById(id);
   }
 
-  // public CustomerAccount findByUserId(String userId) {
-  // return repository.findByUserId(userId).get(0);
-  // // return null;
-  // }
+
 
   @Override
   public List<TableAvailability> findBySeats(int seats) {

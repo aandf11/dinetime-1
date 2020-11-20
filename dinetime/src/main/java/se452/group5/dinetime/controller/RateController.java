@@ -42,20 +42,7 @@ public class RateController {
     private Integer rid;
 
 
-//     @GetMapping
-//     public ModelAndView showAccounts() {
-//     ModelAndView mv = new ModelAndView("add-rate");
 
-//     CustomerAccount c=accountServise.findById(uid);
-    
-
-//     mv.addObject("reservations", c.getReservationList());
-
-//     mv.addObject("account", c);
-
-    
-//     return mv;
-//   }
 
 @GetMapping("/add/{id}")
 public String showSignUpForm(Rate rate, @PathVariable("id") Integer id ) {
@@ -87,8 +74,7 @@ public String showSignUpForm(Rate rate, @PathVariable("id") Integer id ) {
 
 
     accountServise.update(c);
-    // rateService.update(rate);
-    // model.addAttribute("rate", rateService.findAll());
+  
     
     return "redirect:/reservation";
   }
