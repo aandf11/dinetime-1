@@ -16,19 +16,19 @@ CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
 
 CREATE TABLE customer_accounts(
     id INT AUTO_INCREMENT  PRIMARY KEY,   
-	user_id VARCHAR(20),
+	user_id VARCHAR(30),
 	nm VARCHAR(50),
-	email VARCHAR(50),
-	password VARCHAR(20),
+	email VARCHAR(60),
+	password VARCHAR(25),
 	PRIMARY KEY (ID)  
 );
 
 CREATE TABLE business_accounts(
     id int primary key auto_increment,
-	user_id VARCHAR(20),
+	user_id VARCHAR(30),
 	business_nm VARCHAR(50),
-	email VARCHAR(50),
-	password VARCHAR(20)
+	email VARCHAR(60),
+	password VARCHAR(25)
 );
 
 
@@ -43,15 +43,15 @@ CREATE TABLE table_availability(
 
 CREATE TABLE login_customer(
 	id int primary key auto_increment,
-	user_id VARCHAR(20),
-	password VARCHAR(20)
+	user_id VARCHAR(30),
+	password VARCHAR(25)
 );
 
 
 CREATE TABLE login_business(
 	id int primary key auto_increment,
-	user_id VARCHAR(20),
-	password VARCHAR(20)
+	user_id VARCHAR(30),
+	password VARCHAR(25)
 );
 
 
@@ -63,7 +63,7 @@ CREATE TABLE login_business(
 CREATE TABLE restaurants(
 	id int primary key auto_increment,
 	restaurant_nm VARCHAR(50),
-	restaurant_address VARCHAR(80)
+	restaurant_address VARCHAR(100)
 );
 
 
@@ -71,7 +71,7 @@ CREATE TABLE restaurants(
 CREATE TABLE reservations(
 	id int primary key auto_increment,
 	table_id VARCHAR(20),
-	customer_id VARCHAR(20),
+	customer_id VARCHAR(30),
 	restaurant VARCHAR(50),
 	time varchar(20),
     date DATE,

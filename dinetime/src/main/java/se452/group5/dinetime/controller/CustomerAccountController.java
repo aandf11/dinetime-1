@@ -54,8 +54,8 @@ public class CustomerAccountController {
   @PostMapping
   public ModelAndView add(@Valid CustomerAccount account, BindingResult result, Model model) {
     if (result.hasErrors()) {
-      ModelAndView mv = new ModelAndView("list-customers");
-      mv.addObject("accounts", accountServise.findAll());
+      ModelAndView mv = new ModelAndView("register");
+      // mv.addObject("accounts", accountServise.findAll());
       return mv;
     }
     //put new account into database
